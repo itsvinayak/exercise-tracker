@@ -59,7 +59,7 @@ exports.getUserLog = async (req, res, next) => {
   const { limit, from, to } = req.query;
 
   // query filter based on from and to dates params
-  const queryFilter = getDateRange(id, dateToUTC(from), dateToUTC(to));
+  const queryFilter = getDateRange(id, getDate(from), getDate(to));
 
   // await exercise query promise
   const exercises = await Log
